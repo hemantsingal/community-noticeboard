@@ -43,10 +43,11 @@
               <li><%= link_to "Sign out", logout_path, :method => :delete %></li>
             </ul>
           <% else %>
-            <ul class="nav pull-right">
+            <%= render :partial => 'shared/login_box' %>
+            <!--<ul class="nav pull-right">
               <li><%= link_to "Login", login_path %></li>
               <li><%= link_to "Sign up", sign_up_path %></li>
-            </ul>
+            </ul> -->
           <% end %>
         </div>
           </div><!--/.nav-collapse -->
