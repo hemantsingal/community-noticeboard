@@ -1,13 +1,13 @@
-<%= form_tag sessions_path, :class=>'simple_form form-inline navbar-form pull-right' do %>
+<%= form_tag sessions_path, :class=>'simple_form form-inline navbar-form pull-right', :autocomplete=>'off' do %>
     
-      <%= label_tag :email, 'Email or Mobile' %>
+      <%= label_tag :email, 'Email or Mobile No.' %>
 
       
-        <%= text_field_tag :email, params[:email] %>
+        <%= text_field_tag :email, params[:email], :required => "true" %>
       
       <%= label_tag :password, 'Password'%>
       
-        <%= password_field_tag :password, params[:password], :type=>'password', :class => "input-small" %>
+        <%= password_field_tag :password, params[:password], :type=>'password', :class => "input-small", :required => "true" %>
       
 
     

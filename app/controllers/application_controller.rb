@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def authenticate!
     if(!current_user)
       session[:saved_url] = request.url
-      redirect_to login_path
+      redirect_to sign_up_path
     end
   end
 end
