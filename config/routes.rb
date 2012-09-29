@@ -1,5 +1,14 @@
 CommunityNoticeboard::Application.routes.draw do
+  root :to => 'communities#index'
   resources :communities
+
+  get 'sign_up' => 'users#new', :as => 'sign_up'
+  resources :users
+
+  get 'login' => 'sessions#new', :as => 'login'
+  get 'logout' => 'sessions#destroy', :as => 'logout'
+  resources :sessions
+  # resources :communities
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
