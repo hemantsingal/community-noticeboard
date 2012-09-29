@@ -6,7 +6,7 @@ CommunityNoticeboard::Application.routes.draw do
   resources :users
 
   get 'login' => 'sessions#new', :as => 'login'
-  get 'logout' => 'sessions#destroy', :as => 'logout'
+  delete 'logout' => 'sessions#destroy', :as => 'logout'
   resources :sessions
   # resources :communities
 

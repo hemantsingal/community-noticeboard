@@ -30,11 +30,25 @@
           </a>
           <a class="brand" href="#">CommunityNoticeboard</a>
           <div class="container-fluid nav-collapse">
+            <div class="nav-collapse">
+          <% if current_user.present? %>
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
+            <ul class="nav pull-right">
+              <li><p class="strong navbar-text"><%= current_user.email %></p></li>
+              <li><%= link_to "Sign out", logout_path, :method => :delete %></li>
+            </ul>
+          <% else %>
+            <ul class="nav pull-right">
+              <li><%= link_to "Login", login_path %></li>
+              <li><%= link_to "Sign up", sign_up_path %></li>
+            </ul>
+          <% end %>
+        </div>
           </div><!--/.nav-collapse -->
         </div>
       </div>

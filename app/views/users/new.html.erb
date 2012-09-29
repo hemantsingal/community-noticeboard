@@ -1,5 +1,13 @@
-<h1>New user</h1>
+<%= render :partial=>'shared/jumbo_title', :locals => {:title=>'Sign up'} %>
 
-<%= render 'form' %>
+<%= simple_form_for(@user, :html=>{:class => 'well form-horizontal'}) do |f| %>
+    <%= f.input :email, :input_html => {:class => 'input-xlarge'} %>
+    <%= f.input :name, :input_html => {:class => 'input-xlarge'} %>
+    <%= f.input :password, :as => 'password', :input_html => {:class => 'input-xlarge'} %>
+    <%= f.input :password_confirmation, :as => 'password', :input_html => {:class => 'input-xlarge'} %>
 
-<%= link_to 'Back', users_path %>
+    <div class="form-actions">
+      <%= f.submit "Submit", :class => 'btn btn-primary btn-large' %>
+      <%= link_to 'Cancel', root_path, :class => 'btn btn-danger btn-mini' %>
+    </div>
+<% end %>
