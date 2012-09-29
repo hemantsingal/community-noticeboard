@@ -1,5 +1,5 @@
 CommunityNoticeboard::Application.routes.draw do
-  root :to => 'communities#index'
+  root :to => 'users#new'
   resources :communities
 
   get 'sign_up' => 'users#new', :as => 'sign_up'

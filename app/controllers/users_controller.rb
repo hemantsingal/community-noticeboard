@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
   def new
+    if(current_user)
+      # session[:saved_url] = request.url
+      redirect_to communities_path
+    end
     @user = User.new
   end
 
