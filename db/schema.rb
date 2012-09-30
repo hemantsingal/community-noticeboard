@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929102349) do
+ActiveRecord::Schema.define(:version => 20120930100317) do
 
   create_table "communities", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20120929102349) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "mobile_numer"
+    t.string   "mobile_number"
     t.string   "email"
     t.string   "username"
     t.string   "name"

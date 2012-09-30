@@ -11,7 +11,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   def self.authenticate(mobile_number, password)
-    user = find_by_email (mobile_number)
+    user = find_by_email (mobile_number);
+    if user.blank?
+      user = find_by_mobile_number(mobile_number)
+    end
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       return user
     else

@@ -5,14 +5,14 @@
       <%= label_tag :email, 'Email <abbr title="required">*</abbr>'.html_safe, :class=>'email required control-label' %>
 
       <div class="controls">
-        <%= text_field_tag :email, params[:email], :size=>50 %>
+        <%= text_field_tag :email %>
       </div>
     </div>
 
     <div class="control-group password required">
       <%= label_tag :password, 'Password <abbr title="required">*</abbr>'.html_safe, :class=>'password required control-label' %>
       <div class="controls">
-        <%= password_field_tag :password, params[:password], :size=>50, :type=>'password' %>
+        <%= password_field_tag :password, "", :type=>'password' %>
       </div>
     </div>
 
