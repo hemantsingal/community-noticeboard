@@ -1,0 +1,10 @@
+<%= simple_form_for current_user do |f| %>
+  <%= f.input :email %>
+  <%= f.input :username %>
+  <%= f.input :pic_url %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn' %>
+  </div>
+<% end %>
