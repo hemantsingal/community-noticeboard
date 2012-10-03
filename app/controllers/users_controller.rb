@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_filter :authenticate!, :except => [:new, :create]
   def new
     if(current_user)
       # session[:saved_url] = request.url
@@ -19,6 +19,9 @@ class UsersController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def gettingstarted
   end
 
 end

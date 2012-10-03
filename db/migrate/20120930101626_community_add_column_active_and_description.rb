@@ -5,5 +5,7 @@ class CommunityAddColumnActiveAndDescription < ActiveRecord::Migration
   end
 
   def down
+  	remove_column :communities, :active
+  	remove_column :communities, :description
   end
 end
